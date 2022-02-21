@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 90vh;
+    height: 80vh;
 }
 
 .title-container{
@@ -26,8 +26,8 @@ body {
 }
 
 .guess-row div{
-    min-height: 4rem;
-    min-width: 4rem;
+    min-height: 4em;
+    min-width: 4em;
     border-radius: 5px;
     color: grey;
     border: solid grey;
@@ -54,4 +54,15 @@ body {
 }
 .keyboard-container button:nth-child(28){
     width:60px;
+}
+
+.in-word{
+    background-color:yellow !important;
+}
+
+.right-spot{
+    background-color:green !important;
+}
+.used {
+    background-color:red !important; 
 }

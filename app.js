@@ -67,9 +67,11 @@ const checkWord = () => {
         const sample = gameRows[rowIndex].join('');
         console.log(`word to eval is ${sample}`)
         if(sample == gameWord){
+            checkLetters()
             console.log('WINNNNNNN')
         } else{
             console.log('LOSER')
+            checkLetters()
             rowIndex ++
             letterIndex = 0
         }
@@ -84,3 +86,25 @@ const delLetter = () => {
         tile.textContent = ''
     }
 };
+
+const checkLetters = () =>{
+    let sample = gameRows[rowIndex].join('');
+    for(let i = 0; i< sample.length; i++){
+        const tile = document.getElementById(`guess${rowIndex}-letter${i}`)
+        const letterTile = document.getElementById(sample[i])
+        if (gameWord[i] == sample[i]){
+            console.log(`checking letter ${i}`)
+            setTimeout(() => {tile.classList = 'right-spot'},300*i)
+            setTimeout(() => {letterTile.classList = 'right-spot'},300*i)
+        }
+        else if (gameWord.includes(sample[i])){
+            console.log(`checking letter ${i}`)
+            setTimeout(() => {tile.classList = 'in-word'},300*i)
+            setTimeout(() => {letterTile.classList = 'in-word'},300*i)
+            console.log(sample)
+            
+        } else {
+            letterTile.classList = 'used'
+        }
+    }
+}
