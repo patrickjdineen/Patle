@@ -1,10 +1,15 @@
+import {words} from "/wordList.js";
+
 const keyboard = document.querySelector('.keyboard-container')
 const gameboard = document.querySelector('.guess-container')
 
 let rowIndex = 0;
 let letterIndex = 0;
 
-const gameWord = 'SUPER'
+const randWord = () => {Math.floor(Math.random() * words.length)}
+
+const gameWord = randWord(words)
+console.log(gameWord)
 
 const gameRows = [
     ['','','','',''],
