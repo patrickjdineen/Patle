@@ -39,6 +39,21 @@ alpha.forEach(key => {
     keyboard.append(keyTile);
 });
 
+document.addEventListener('keypress',(e) => {
+    const key = e.key.toUpperCase()
+    switch(key){
+        case 'ENTER':
+            checkWord()
+            break
+        case "BACKSPACE":
+        case "DELETE":
+            delLetter()
+            break
+        default:
+            addLetter(key)
+    }
+});
+
 const handleClick = (key) => {
     if(key == 'Ent'){
         checkWord()
