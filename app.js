@@ -4,7 +4,9 @@ const words = [
     'PATCHY',
     'PATLE',
     'PIPER',
-    'JONAS'
+    'JONAS',
+    'DINEEN',
+    'ELMORE'
 ];
 
 const keyboard = document.querySelector('.keyboard-container')
@@ -51,8 +53,8 @@ alpha.forEach(key => {
 });
 
 document.addEventListener('keypress',(e) => {
-    const key = e.key.toUpperCase()
-    switch(key){
+    const keyPress = e.key.toUpperCase()
+    switch(keyPress){
         case 'ENTER':
             checkWord()
             break
@@ -61,7 +63,7 @@ document.addEventListener('keypress',(e) => {
             delLetter()
             break
         default:
-            addLetter(key)
+            addLetter(keyPress)
     }
 });
 
@@ -97,7 +99,6 @@ const checkWord = () => {
             checkLetters()
             console.log('WINNNNNNN')
         } else{
-            console.log('LOSER')
             checkLetters()
             rowIndex ++
             letterIndex = 0
@@ -121,19 +122,23 @@ const checkLetters = () =>{
         const letterTile = document.getElementById(sample[i])
         if (gameWord[i] == sample[i]){
             console.log(`checking letter ${i}`)
-            setTimeout(() => {tile.classList = 'right-spot'},300*i)
-            setTimeout(() => {letterTile.classList = 'right-spot'},300*i)
+            setColor(tile, 'right-spot', i)
+            setColor(letterTile, 'right-spot',i)
         }
         else if (gameWord.includes(sample[i])){
             console.log(`checking letter ${i}`)
-            setTimeout(() => {tile.classList = 'in-word'},300*i)
-            setTimeout(() => {letterTile.classList = 'in-word'},300*i)
+            setColor(tile, 'in-word', i)
+            setColor(letterTile, 'in-word',i)
             console.log(sample)
             
         } else {
-            letterTile.classList = 'used'
+            setColor(letterTile,'used',i);
+            setColor(tile, 'used', i)
         }
     }
 }
 
+const setColor =(tileType, color, index)=>{
+    setTimeout(() => {tileType.classList = color},300 * index )
+}
 

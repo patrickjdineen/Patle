@@ -32,7 +32,7 @@ body {
     height: 4em;
     width: 4em;
     border-radius: 10px;
-    border: solid grey;
+    border: solid #3a4a4c;
     margin: .2em;
 }
 .keyboard-container{
@@ -59,11 +59,15 @@ body {
 
 .in-word{
     background-color:yellow !important;
+    color: black !important;
+    border: solid yellow !important;
 }
 
 .right-spot{
     background-color:green !important;
+    border: solid green !important;
 }
 .used {
-    background-color:red !important; 
+    background-color:#3a4a4c !important; 
+    border: solid #3a4a4c !important;
 }
