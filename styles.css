@@ -26,13 +26,14 @@ body {
 }
 
 .guess-row div{
-    min-height: 4em;
-    min-width: 4em;
-    border-radius: 5px;
-    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4em;
+    width: 4em;
+    border-radius: 10px;
     border: solid grey;
-    margin: .25em;
-    align-content: center;
+    margin: .2em;
 }
 .keyboard-container{
     width:510px;

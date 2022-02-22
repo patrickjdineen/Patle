@@ -1,4 +1,11 @@
-import {words} from "/wordList.js";
+const words = [
+    'SARAH',
+    'ROWAN',
+    'PATCHY',
+    'PATLE',
+    'PIPER',
+    'JONAS'
+];
 
 const keyboard = document.querySelector('.keyboard-container')
 const gameboard = document.querySelector('.guess-container')
@@ -8,8 +15,7 @@ let letterIndex = 0;
 
 const randWord = () => {Math.floor(Math.random() * words.length)}
 
-const gameWord = randWord(words)
-console.log(gameWord)
+const gameWord = words[Math.floor(Math.random()*words.length)]
 
 const gameRows = [
     ['','','','',''],
@@ -86,6 +92,7 @@ const checkWord = () => {
     } else {
         const sample = gameRows[rowIndex].join('');
         console.log(`word to eval is ${sample}`)
+        console.log(`word is ${gameWord}`)
         if(sample == gameWord){
             checkLetters()
             console.log('WINNNNNNN')
@@ -128,3 +135,5 @@ const checkLetters = () =>{
         }
     }
 }
+
+
